@@ -1,8 +1,10 @@
+{% load static %}
 <html>
-    <head>{% block title %}{% endblock %}</head>
+    <head>
+        {% block title %}{% endblock %}
+        <link rel="stylesheet" href="{% static 'tracker/dashboard.css' %}">
+    </head>
     <body>
-        {% include "navbar.html" %}
-        {% include "messages.html" %}
         <main>
             {% block content %}
             {% endblock %}
