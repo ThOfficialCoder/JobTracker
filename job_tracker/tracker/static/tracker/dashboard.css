@@ -1,9 +1,10 @@
 .layout-container {
     display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
+    flex-direction: column; /* header on top, body below */
+    height: 100vh; /* full viewport height */
+} 
 
+/* Header (stays full width, never cut) */
 .dashboard-nav {
     background-color: white;
     height: 80px;
@@ -11,21 +12,25 @@
     align-items: center;
     padding-left: 20px;
     border-bottom: 1px solid lightgray;
+    flex-shrink: 0; /* prevent navbar from shrinking */
 }
 
+/* Body layout (fills remaining space) */
 .dashboard-body {
     display: flex;
-    flex: 1;
+    flex: 1; /* fill remaining height under header */
+    overflow: hidden;
 }
 
+/* Sidebar */
 .dashboard-ver {
     background-color: white;
     width: 200px;
     border-right: 1px solid lightgray;
     padding: 20px;
-    height: 100%;
 }
 
+/* Sidebar list */
 .dashboard-ver ul {
     list-style-type: none;
     padding: 0;
@@ -35,10 +40,13 @@
 .dashboard-ver li {
     margin-bottom: 10px;
     font-weight: bold;
+    color: #333;
 }
 
-.main-content {
-    background-color: lightgray;
+/* Main content */
+.dashboard-main {
     flex: 1;
     padding: 20px;
+    background-color: #f0f0f0; /* grey */
+    overflow-y: auto; /* scroll if content is long */
 }
