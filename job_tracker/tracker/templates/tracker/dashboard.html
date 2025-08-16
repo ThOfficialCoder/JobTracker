@@ -1,27 +1,32 @@
 {% extends "tracker/base.html" %}
 {% block content %}
-<div class="layout-container">
-    <!-- Top navigation bar -->
-    <header class="dashboard-nav">
+<div class="dashboard-container">
+    <header class="dashboard-header">
         <h1>Track Hunt</h1>
     </header>
-
-    <!-- Sidebar + main content below navbar -->
-    <div class="dashboard-body">
-        <div class="dashboard-ver">
-            <nav>
-                <ul>
-                    <li>Dashboard</li>
-                    <li>Applications</li>
-                    <li>Settings</li>
-                </ul>
-            </nav>
+    <aside class="sidebar">
+        <ul>
+            <li>Dashboard</li>
+            <li>Applications</li>
+            <li>Settings</li>
+        </ul>
+    </aside>
+    <section class="main-content">
+        <div class="job-summary">Job Summary</div>
+        <div class="summary-cards">
+            <div class="summary-card">
+                <h2 id="total-app">Total Applications</h2>
+            </div>
+            <div class="summary-card">
+                <h2 id="interviews">Interviews</h2>
+            </div>
+            <div class="summary-card">
+                <h2 id="offers">Offers</h2>
+            </div>
+            <div class="summary-card">
+                <h2 id="rejected">Rejected</h2>
+            </div>
         </div>
-
-        <main class="dashboard-main">
-            <h2>Welcome to Track Hunt</h2>
-            <p>This text stays in the grey area beside the sidebar, not under the navbar.</p>
-        </main>
-    </div>
+    </section>
 </div>
 {% endblock %}

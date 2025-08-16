@@ -30,23 +30,121 @@
     padding: 20px;
 }
 
-/* Sidebar list */
-.dashboard-ver ul {
-    list-style-type: none;
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f3f3f3;
+}
+
+.dashboard-header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 24px 0 24px 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    padding-top: 80px; /* Height of header */
+}
+
+.sidebar {
+    width: 220px;
+    background: #fff;
+    border-right: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 32px 0 0 32px;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+}
+
+.sidebar ul {
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.dashboard-ver li {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
+.sidebar ul li {
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #222;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.sidebar ul li:hover {
+    color: #0078d4;
 }
 
-/* Main content */
-.dashboard-main {
+.main-content {
     flex: 1;
-    padding: 20px;
-    background-color: #f0f0f0; /* grey */
-    overflow-y: auto; /* scroll if content is long */
+    padding: 40px 48px;
+    background: #f3f3f3;
+    min-height: 100vh;
+}
+
+.job-summary {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    color: #222;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.summary-card {
+    background: #fff;
+    border-radius: 25px;
+    height: 120px;
+    width: 255px;
+    display: flex;
+    align-items: right;
+    font-size: 10px;
+    color: #222;
+}
+
+#total-app {
+    text-align: right;
+    padding-left: 100px;
+    padding-top: 20px;
+}
+
+#interviews {
+    text-align: right;
+    padding-left: 140px;
+    padding-top: 20px;
+}
+
+#offers {
+    text-align: right;
+    padding-left: 160px;
+    padding-top: 20px;
+}
+
+#rejected {
+    text-align: right;
+    padding-left: 160px;
+    padding-top: 20px;
 }
